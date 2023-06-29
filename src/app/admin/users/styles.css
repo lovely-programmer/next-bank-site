@@ -1,0 +1,17 @@
+.list {
+  display: flex;
+  width: 100%;
+}
+
+.listContainer {
+  flex: 6;
+}
+
+@media screen and (max-width: 1100px) {
+  .listContainer {
+    flex: 1;
+  }
+  /* .listContainer .navbar {
+    width: 100vw;
+  } */
+}

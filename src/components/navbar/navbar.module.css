@@ -1,0 +1,256 @@
+.container {
+  padding: 1rem 0;
+  -webkit-box-shadow: 0 0 8.55px 0.45px rgba(0, 0, 0, 0.27);
+  box-shadow: 0 0 8.55px 0.45px rgba(0, 0, 0, 0.27);
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  max-width: 1141px;
+  margin: 0 auto;
+  padding: 0 50px;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.mobile {
+  align-items: center;
+  max-width: 1141px;
+  margin: 0 auto;
+  padding: 0 50px;
+  width: 100%;
+  justify-content: space-between;
+  display: none;
+}
+
+.mobile {
+  display: none;
+}
+
+.logo {
+  font-size: 45px;
+}
+
+.list {
+  display: flex;
+  align-items: center;
+  background: #103962;
+  color: white;
+  padding: 10px 0 10px;
+}
+
+.list ul {
+  display: flex;
+  gap: 35px;
+  max-width: 1141px;
+  margin: 0 auto;
+  padding: 0 50px;
+  width: 100%;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.list ul li {
+  font-size: 15px;
+}
+
+.list ul li span {
+  padding-right: 5px;
+}
+
+.links {
+  display: flex;
+  align-items: center;
+  font-size: 25px;
+  gap: 2.5rem;
+}
+
+.button {
+  border-color: #ad1a11;
+  background: #ad1a11;
+  padding: 10px 20px;
+  cursor: pointer;
+  border: none;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.bar svg {
+  height: 30px;
+}
+
+.signIn {
+  position: relative;
+}
+
+.navbar__login {
+  box-shadow: 0 0.1rem 0.4rem 0 rgb(0 0 0 / 5%),
+    0 0.2rem 0.8rem 0.3rem rgb(0 0 0 / 3%),
+    0 0.2rem 1.6rem 0.6rem rgb(0 0 0 / 5%);
+  display: block;
+  background-color: #fff;
+  overflow: hidden;
+  position: absolute;
+  transform: translateX(0);
+  width: 350px;
+  z-index: 500;
+  transition: transform 0.3s ease-in-out;
+  top: 0;
+  right: 0;
+}
+
+.navbar__login .navbar__login__container {
+  padding: 20px;
+}
+
+.navbar__login .navbar__login__container h3 {
+  font-weight: 500;
+  font-size: 18px;
+  text-transform: uppercase;
+}
+
+.close {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.close svg {
+  cursor: pointer;
+}
+
+.navbar__login button {
+  padding: 10px 15px;
+  cursor: pointer;
+  background-color: #2e1a47;
+  color: white;
+  border-radius: 4px;
+  font-size: 14px;
+  margin-right: 20px;
+}
+
+form .remember__username {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+/* form .remember__username input {
+  width: 16px;
+  height: 24px;
+} */
+
+form .remember__username span {
+  font-size: 16px;
+}
+
+form .form__button {
+  margin-top: 20px;
+}
+
+form .create__account__link {
+  margin-top: 20px;
+}
+
+form .create__account__link p a {
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: uppercase;
+  text-decoration: underline;
+}
+
+/* form .create__account__link p a:hover {
+  text-decoration: underline;
+} */
+
+.form__group {
+  border: 1px solid rgb(219, 219, 219);
+  font-size: 14px;
+  border-bottom-right-radius: 3px;
+  border-top-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  height: 39px;
+  padding: 9px 0 7px 8px;
+}
+
+.form__group label {
+  border: 0;
+  position: absolute;
+  font-size: 12px;
+  color: rgb(142, 142, 142);
+  height: 36px;
+}
+
+.form__group input {
+  border: none;
+  outline: none;
+  width: 100%;
+}
+
+.form__group input:valid + label {
+  top: -1px;
+  font-size: 10px;
+}
+
+.form__group input:valid {
+  padding-top: 5px;
+}
+
+/* Media Queries */
+@media screen and (max-width: 1030px) {
+  .list {
+    display: none;
+  }
+  .content {
+    display: none;
+  }
+  .mobile {
+    display: flex;
+  }
+  .mobileContent {
+    display: flex;
+    gap: 25px;
+    align-items: center;
+  }
+  .button {
+    padding: 10px 15px;
+    font-size: 14px;
+  }
+  .logo {
+    font-size: 30px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .mobile {
+    padding: 0 20px;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .button {
+    padding: 10px;
+    font-size: 12px;
+  }
+
+  .bar svg {
+    height: 20px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .navbar__login {
+    transform: translateX(50px);
+  }
+}

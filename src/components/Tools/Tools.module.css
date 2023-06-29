@@ -1,0 +1,180 @@
+.container {
+  max-width: 1141px;
+  margin: 0 auto;
+  padding: 0 50px;
+}
+
+.tools {
+  display: flex;
+  position: relative;
+}
+
+.imgContainer {
+  position: relative;
+  height: 500px;
+  width: 30%;
+}
+
+.image {
+  background-size: contain;
+  background-position: center center;
+  background-repeat: no-repeat;
+  height: 100%;
+}
+
+.toolBox {
+  position: absolute;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  z-index: 2;
+  width: 100%;
+}
+
+.toolBox h2 {
+  display: flex;
+  justify-content: flex-end;
+  font-size: 30px;
+  font-weight: normal;
+  position: relative;
+}
+
+.toolBox h2:after {
+  background: #ad1a11;
+  border-radius: 0;
+  bottom: -1.5rem;
+  content: "";
+  display: block;
+  height: 4px;
+  position: absolute;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  width: 7rem;
+}
+
+.boxes {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 90px;
+}
+
+.promo {
+  font-size: 30px;
+  margin: 20px 0;
+  position: relative;
+}
+
+.color .promo:after {
+  background: #b3eaff;
+  border-radius: 0;
+  bottom: -1.5rem;
+  content: "";
+  display: block;
+  height: 4px;
+  position: absolute;
+  transition: all 0.2s ease-in-out;
+  width: 7rem;
+}
+
+.box {
+  border-color: #b3eaff;
+  background-color: #b3eaff;
+  color: #103962;
+  cursor: pointer;
+  width: 25%;
+  margin-right: 10px;
+  padding: 40px;
+}
+
+.color {
+  background: #103962;
+  color: #fff;
+}
+
+.color:hover {
+  border-color: #b3eaff;
+  background-color: #b3eaff;
+  color: #103962;
+}
+
+.color:hover .dark {
+  display: block;
+}
+
+.color:hover .light {
+  display: none;
+}
+
+.dark {
+  display: none;
+}
+
+.color a {
+  display: none !important;
+}
+
+.color:hover a {
+  display: flex !important;
+}
+
+.box a {
+  font-size: 18px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.box a span {
+  margin-right: 14.4px;
+}
+
+@media screen and (max-width: 900px) {
+  .tools {
+    gap: 20px;
+    align-items: center;
+  }
+  .toolBox {
+    position: relative;
+    gap: 20px;
+  }
+  .imgContainer {
+    height: 100%;
+    width: 100%;
+  }
+  .image {
+    height: 500px;
+  }
+  .boxes {
+    display: flex;
+    margin-top: 20px;
+    flex-direction: column;
+  }
+  .box {
+    width: 100%;
+  }
+  .box img {
+    width: 40px;
+    height: 40px;
+  }
+  .box a {
+    font-size: 14px;
+  }
+  .promo {
+    font-size: 25px;
+    margin: 10px 0;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .container {
+    padding: 0 20px;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .tools {
+    flex-direction: column-reverse;
+  }
+}
