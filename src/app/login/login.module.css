@@ -1,0 +1,125 @@
+.login__nav {
+  background-color: #103962;
+}
+
+.login__nav__content {
+  max-width: 1141px;
+  padding: 0 50px;
+  margin: 0 auto;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  color: white;
+  margin-bottom: 50px;
+}
+
+.login__nav a {
+  color: inherit;
+}
+
+.login__form {
+  position: relative;
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 20px;
+  margin: 0 auto;
+}
+
+.login__header {
+  margin-bottom: 20px;
+}
+
+form .remember__username {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+form .remember__username span {
+  font-size: 16px;
+}
+
+form .form__button {
+  margin-top: 20px;
+}
+
+form .create__account__link {
+  margin-top: 20px;
+}
+
+form .create__account__link p a {
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: uppercase;
+  text-decoration: underline;
+}
+
+/* form .create__account__link p a:hover {
+  text-decoration: underline;
+} */
+
+.form__group {
+  border: 1px solid rgb(219, 219, 219);
+  font-size: 14px;
+  border-bottom-right-radius: 3px;
+  border-top-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  height: 39px;
+  padding: 9px 0 7px 8px;
+}
+
+.form__group label {
+  border: 0;
+  position: absolute;
+  font-size: 12px;
+  color: rgb(142, 142, 142);
+  height: 36px;
+}
+
+.form__group input {
+  border: none;
+  outline: none;
+  width: 100%;
+}
+
+.form__group input:valid + label {
+  top: -1px;
+  font-size: 10px;
+}
+
+.form__group input:valid {
+  padding-top: 5px;
+}
+
+.form__button button {
+  border-color: #ad1a11;
+  background: #ad1a11;
+  padding: 10px 20px;
+  cursor: pointer;
+  border: none;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+@media screen and (max-width: 500px) {
+  .login__nav__content {
+    padding: 0 20px;
+  }
+  .login__form {
+    width: 100%;
+  }
+  .form {
+    width: 100%;
+  }
+}

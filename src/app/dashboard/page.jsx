@@ -1,7 +1,12 @@
+"use client";
 import DashboardWrapper from "@/components/dashboard/DashboardWrapper";
 import "./style.css";
+import { useSession } from "next-auth/react";
 
 function page() {
+  const session = useSession();
+  console.log(session);
+
   return (
     <DashboardWrapper>
       <div className="account">

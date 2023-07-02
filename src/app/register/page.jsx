@@ -7,8 +7,13 @@ import { useMultistepForm } from "@/hooks/useMultistepForm";
 import { useState } from "react";
 import styles from "./register.module.css";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { signIn, useSession } from "next-auth/react";
 
 function page() {
+  const router = useRouter();
+  const session = useSession();
+
   const [formData, setFormData] = useState({
     username: "",
     name: "",
@@ -60,7 +65,7 @@ function page() {
       <VerifyIdentity {...formData} updateFields={updateFields} />,
     ]);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     if (!isLastStep) return next();
@@ -85,9 +90,28 @@ function page() {
         date_of_birth,
       };
 
-      console.log(userData);
+      try {
+        const res = await fetch("/api/users", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(userData),
+        });
+
+        if (res.status === 201) {
+          const { username, password } = await res.json();
+          signIn("credentials", { username, password });
+        }
+      } catch (error) {
+        console.log(error);
+      }
     }
   };
+
+  if (session.status === "authenticated") {
+    router.push("/dashboard");
+  }
 
   return (
     <div className={styles.register}>

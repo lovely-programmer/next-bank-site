@@ -8,6 +8,8 @@ import {
   AiOutlineEye,
   AiOutlineEyeInvisible,
 } from "react-icons/ai";
+import { signIn, useSession } from "next-auth/react";
+import { useRouter } from "next/navigation";
 
 function Login({ setShowLogin }) {
   const [showPassword, setShowPassword] = useState(false);
@@ -15,6 +17,17 @@ function Login({ setShowLogin }) {
     username: "",
     password: "",
   });
+
+  const router = useRouter;
+
+  const session = useSession();
+
+  if (session.status === "loading") {
+    return <p>Loading...</p>;
+  }
+  if (session.status === "authenticated") {
+    router.push("/dashboard");
+  }
 
   const { username, password } = formData;
 
@@ -28,7 +41,7 @@ function Login({ setShowLogin }) {
   const handleSubmit = (e) => {
     e.preventDefault();
     const userData = { username, password };
-    console.log(userData);
+    signIn("credentials", { username, password });
   };
 
   return (

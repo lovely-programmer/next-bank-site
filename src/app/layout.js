@@ -1,3 +1,4 @@
+import AuthProvider from "@/components/authProvider/AuthProvider";
 import "./globals.css";
 import { ThemeProvider } from "@/context/ThemeContext";
 import { library } from "@fortawesome/fontawesome-svg-core";
@@ -37,7 +38,9 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body>
         <ThemeProvider>
-          <div>{children}</div>
+          <AuthProvider>
+            <div>{children}</div>
+          </AuthProvider>
         </ThemeProvider>
       </body>
     </html>
